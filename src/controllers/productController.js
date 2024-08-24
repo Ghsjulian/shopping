@@ -1,5 +1,6 @@
 const Product = require("../models/Products");
 const User = require("../models/Users");
+const mongoose = require("mongoose");
 const multer = require("multer");
 const myFunction = require("../auth/functions");
 const dotenv = require("dotenv");
@@ -112,10 +113,11 @@ class Products {
             success: "Everything Is okay"
         });
     }
+    /*
     async viewProduct(req, res) {
-        const products = await Product.findOne({
-            _id: req.params.id
-        });
+        console.log(req.params.id);
+        const products = await Product.findfindById(req.params.id).exec();
+        console.log(products);
         res.status(200).json({
             code: 200,
             products,
@@ -123,6 +125,34 @@ class Products {
             status: "success",
             success: "Everything Is okay"
         });
+    }
+    */
+
+    async viewProduct(req, res) {
+        try {
+            const productId = req.params.id;
+            const product = await Product.findById(productId).exec();
+            console.log(product);
+            if (!product) {
+                return res.status(404).json({
+                    code: 404,
+                    message: "Product not found",
+                    type: false,
+                    status: "error",
+                    error: "Product not found"
+                });
+            }
+            res.status(200).json({
+                code: 200,
+                product,
+                type: true,
+                status: "success",
+                success: "Product fetched successfully"
+            });
+        } catch (error) {
+            console.error(error);
+            res.status(500).json({ error: "Internal Server Error" });
+        }
     }
     async allProduct(req, res) {
         const products = await Product.find().exec();
@@ -154,7 +184,6 @@ class Products {
             success: "Everything Is okay"
         });
     }
-    
 }
 let product = new Products();
 module.exports = product;

@@ -1,10 +1,12 @@
 <body>
     <script>
-   //     const apiUrl = "https://e-shopping-ghs.vercel.app/api/";
-         const apiUrl = "http://localhost:5000/api";
+        const url = "http://localhost:5000/api/products/all-products";
+        const apiUrl =
+            "http://localhost:5000/api/products/view-products/669782c1537bdfcfd0f02165";
+        //   /products/view-products/
         const fetchProduct = async () => {
             try {
-                const response = await fetch(apiUrl + "/products/all-products");
+                const response = await fetch(apiUrl);
                 const data = await response.json();
                 console.log(data);
             } catch (error) {
@@ -13,6 +15,6 @@
         };
 
         fetchProduct();
-        // window.location.href="http://localhost:5173"
+        //   window.location.href="http://localhost:5173"
     </script>
 </body>
