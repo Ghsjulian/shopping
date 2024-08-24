@@ -1,0 +1,33 @@
+# Enable URL rewriting
+RewriteEngine On
+# Rewrite requests to index.html for 
+# client-side routing
+RewriteCond %{REQUEST_FILENAME} !-f 
+RewriteCond %{REQUEST_FILENAME} !-d 
+RewriteRule ^(.*)$ index.html [L]
+# Disable directory listing
+Options -Indexes
+# Set the default document root
+DirectoryIndex index.html
+# Set the MIME type for JSON files
+AddType application/json .json
+# Set the MIME type for JavaScript files
+AddType application/javascript .js
+# Set the MIME type for CSS files
+AddType text/css .css
+# Set the MIME type for image files
+AddType image/png .png AddType image/jpeg .jpg 
+AddType image/gif .gif
+# Set the MIME type for font files
+AddType application/font-woff2 .woff2 AddType 
+application/font-woff .woff AddType 
+application/vnd.ms-fontobject .eot AddType 
+font/ttf .ttf AddType font/otf .otf
+# Set the cache control headers
+<IfModule mod_headers.c> Header set 
+  Cache-Control "max-age=31536000, public"
+</IfModule>
+# Set the expires headers
+<IfModule mod_expires.c> ExpiresActive On 
+  ExpiresDefault "access plus 1 year"
+</IfModule>
