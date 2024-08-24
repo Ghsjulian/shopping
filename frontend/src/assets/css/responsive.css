@@ -1,0 +1,132 @@
+/*
+ ##### Responsive Desgin Here ####
+*/
+
+@media (max-width: 768px) {
+    header,
+    .header {
+        display: none;
+        width: 75%;
+        animation: left-animation 0.2s linear;
+    }
+    #mobile-cart {
+        display: block;
+    }
+    .header .search-container {
+        display: flex;
+        align-items: center;
+        margin: 0.3rem auto;
+        border-radius: 150px;
+        padding: 0 0.7rem;
+        border: 2px solid #fff;
+        text-align: center;
+        width: 85%;
+    }
+    .search-container input {
+        outline: none;
+        border: none;
+        padding: 0.2rem 0.3rem;
+        margin: 0;
+        border-radius: 15px;
+        width: 100%;
+        color: #fff;
+        font-weight: 500;
+    }
+    .search-container a {
+        background: transparent;
+        text-decoration: none;
+        border-radius: 50%;
+        font-size: 18px;
+        margin-top: 0.5rem;
+        color: #fff;
+        text-align: center;
+    }
+    nav,
+    .top-bar {
+        width: 100%;
+        left: 0;
+    }
+    .show-header {
+        display: block;
+        transition: 0.5s ease-in;
+    }
+    .top-bar a,
+    .top-bar .top-bar-links {
+        display: none;
+    }
+    .top-bar button {
+        display: block;
+    }
+    .social-links a {
+        margin: 0.3rem 0.3rem;
+        padding: 0.5rem;
+    }
+    .nav-menu {
+        margin: 0;
+        padding: 0;
+    }
+    .nav-menu ul li a {
+        margin: 1rem auto;
+        padding: 0.5rem 0;
+    }
+    main {
+        left: 0;
+        width: 100%;
+    }
+    .container p {
+        max-width: 100%;
+        margin: 0 auto;
+    }
+    #skills article,
+    #projects article,
+    #contact article {
+        max-width: 100%;
+        text-align: justify;
+        margin: 0.5rem auto;
+        padding: 0.3rem 0.5rem;
+    }
+    .footer {
+        left: 0;
+        width: 100%;
+    }
+    section #heading {
+        width: 70%;
+    }
+    .two-row {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
+    .grid-row .col img {
+        width: 320px;
+    }
+    .carousel-item img {
+        width: 100vw;
+        height: auto; /* Allow image to adapt proportionally */
+        object-fit: cover; /* Ensure image fills the container */
+        display: block; /* Make sure image behaves like a block element */
+    }
+    .page p,
+    #desc {
+        width: 100%;
+        max-width: 100%;
+    }
+    .grid-area {
+        gap: 5px;
+        font-size: 13px;
+        grid-template-columns: repeat(auto-fill, minmax(48%, 1fr));
+        grid-template-rows: repeat(auto-fill, minmax(auto, 1fr));
+    }
+    .grid-col {
+        padding: 0.2rem 0.3rem;
+    }
+    .grid-area .grid-col img {
+        height: 150px;
+    }
+    .grid-area .grid-col h5 {
+        font-size: 14px;
+    }
+    .grid-area .grid-col .btn-area a span {
+        /* width: 45%; */
+        display: none;
+    }
+}

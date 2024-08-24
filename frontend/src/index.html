@@ -1,0 +1,18 @@
+<body>
+    <script>
+   //     const apiUrl = "https://e-shopping-ghs.vercel.app/api/";
+         const apiUrl = "http://localhost:5000/api";
+        const fetchProduct = async () => {
+            try {
+                const response = await fetch(apiUrl + "/products/all-products");
+                const data = await response.json();
+                console.log(data);
+            } catch (error) {
+                console.log(error);
+            }
+        };
+
+        fetchProduct();
+        // window.location.href="http://localhost:5173"
+    </script>
+</body>
