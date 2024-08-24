@@ -8,7 +8,7 @@
 
 <br>
 <h4>Project Name  :  Shopping-Cart API</h4>
-<h4>Live Demo     :  <a href="https://bakdif.com" target="_blank"> Clik Here</a>
+<h4>Live Demo     :  <a href="[https://bakdif.com](https://shopping-app-one-sooty.vercel.app/)" target="_blank"> Clik Here</a>
 <h4> Developed By :  Ghs Julian</h4>
 
 --- 
