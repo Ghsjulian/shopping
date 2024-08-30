@@ -131,8 +131,7 @@ class Products {
     async viewProduct(req, res) {
         try {
             const productId = req.params.id;
-            const product = await Product.findById(productId).exec();
-            console.log(product);
+            const product = await Product.findOne({ _id: productId });
             if (!product) {
                 return res.status(404).json({
                     code: 404,
